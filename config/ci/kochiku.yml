@@ -1,0 +1,7 @@
+ruby:
+  - 2.5.3
+targets:
+  - type: default_rake
+    workers: 1
+
+test_command: 'script/ci'

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -x
+source /home/kochiku/.bashrc
+export RAILS_ENV=test
+
+function prepare_and_run() {
+  if [ "$TEST_RUNNER" == "default_rake" ]; then
+    bundle install
+    bundle exec rspec
+    success=$?
+    exit $success
+  fi
+}
+
+prepare_and_run

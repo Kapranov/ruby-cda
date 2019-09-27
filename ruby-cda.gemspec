@@ -13,10 +13,10 @@ Gem::Specification.new do |s|
   s.files       = `git ls-files lib`.split($/)
   s.homepage    = 'https://github.com/niquola/ruby-cda'
 
-  s.add_dependency 'activesupport', '4.2.7'
+  s.add_dependency 'activesupport', '>= 5.0'
   s.add_dependency 'nokogiri',      '~> 1.6'
   s.add_dependency 'virtus',        '~> 1.0'
-  s.add_dependency 'i18n',          '~> 0.7'
+  s.add_dependency 'i18n',          '~> 1'
 
   s.add_development_dependency 'awesome_print',             '~> 1.7'
   s.add_development_dependency 'rspec',                     '~> 3.5'

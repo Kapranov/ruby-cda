@@ -64,10 +64,10 @@ class Cda::XmlBuilder
     self.xml = Nokogiri::XML::Builder.new
     if template_type != 'ClinicalDocument'
       xml.ClinicalDocument(
-        'xmlns:xsi' => "http://www.w3.org/2001/XMLSchema-instance",
-        'xsi:schemaLocation' => "urn:hl7-org:v3 http://xreg2.nist.gov:8080/hitspValidation/schema/cdar2c32/infrastructure/cda/C32_CDA.xsd",
-        'xmlns' => "urn:hl7-org:v3",
-        'xmlns:mif' => "urn:hl7-org:v3/mif"
+        "xmlns:xsi" => "http://www.w3.org/2001/XMLSchema-instance",
+        "xmlns" => "urn:hl7-org:v3",
+        "xmlns:voc" => "urn:hl7-org:v3/voc",
+        "xmlns:sdtc" => "urn:hl7-org:sdtc",
       ) do |_|
         build
       end
@@ -81,8 +81,14 @@ class Cda::XmlBuilder
     opts = args.extract_options!
     args << opts.each_with_object({}) do |pair, result|
       key, value = pair
-      result[key.to_s.camelize(:lower)] = value unless value.blank?
+
+      if key == "id"
+        result[key.upcase] = value unless value.blank?
+      else
+        result[key.to_s.camelize(:lower)] = value unless value.blank?
+      end
     end
+
     tag_name = name.to_s
     tag_name = tag_name[0] + tag_name[1..-1].camelize(:lower)
     tag_name = "#{tag_name}_" if xml.respond_to?(tag_name)
@@ -184,6 +190,7 @@ class Cda::XmlBuilder
         end
       end
     end
+
     hash
   end
 

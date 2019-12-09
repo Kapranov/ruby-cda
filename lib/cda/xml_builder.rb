@@ -108,6 +108,11 @@ class Cda::XmlBuilder
   def build_single_element(instance, element)
     wrap_node_if_required(element) do
       additional_options = get_additional_options(instance, element)
+
+      #if instance.respond_to?(:value) && instance.value.to_s === "70.0"
+        binding.pry
+      #end
+
       if instance.class.respond_to?(:attribute_set)
         build_instance_element(element.element_name, instance, additional_options)
       elsif element.name != :_text

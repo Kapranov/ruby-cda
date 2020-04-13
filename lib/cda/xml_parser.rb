@@ -33,7 +33,7 @@ module Cda
       if node_or_xpath.is_a?(String)
         node_set = xml.xpath(node_or_xpath)
         return if node_set.blank?
-        if node_set.length > 1
+        if node_set.length > 1 && !Ccd.config[:forgive_multiple_nodes_by_using_first]
           raise "Expected only one node as result of #{node_or_xpath}, but #{node_set.inspect}"
         end
         node = node_set.first

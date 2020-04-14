@@ -1,5 +1,5 @@
 module Ccd
-  class PreconditionForSubstanceAdministrat < Cda::Precondition
+  class PreconditionForSubstanceAdministrat < Cda::Criterion
     include Ccd::PreconditionForSubstanceAdministratTemplate
 
     def self.template_type

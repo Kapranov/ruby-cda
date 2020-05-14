@@ -10,6 +10,7 @@ class Cda::Patient < Cda::Base
   attribute :religious_affiliation_code, Cda::CE
   attribute :race_code, Cda::CE
   attribute :ethnic_group_code, Cda::CE
+  attribute :sdtc_ethnic_group_code, Array[Cda::CE], annotations: { multiple: true }
   attribute :guardian, Array[Cda::Guardian], annotations: {:multiple=>true}
   attribute :birthplace, Cda::Birthplace
   attribute :language_communication, Array[Cda::LanguageCommunication], annotations: {:multiple=>true}

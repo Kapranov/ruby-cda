@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |s|
   s.name        = 'ruby-cda'
-  s.version     = '0.0.1'
+  s.version     = '0.1.0'
   s.licenses    = ['MIT']
   s.summary     = "HL7 CDA Documents"
   s.description = "Parse & generation of HL7 cda documents"
@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.files       = `git ls-files lib`.split($/)
   s.homepage    = 'https://github.com/niquola/ruby-cda'
 
-  s.add_dependency 'activesupport', '>= 5.0'
+  s.add_dependency 'activesupport', '~> 5.0'
   s.add_dependency 'nokogiri',      '~> 1.6'
   s.add_dependency 'virtus',        '~> 1.0'
   s.add_dependency 'i18n',          '~> 1'

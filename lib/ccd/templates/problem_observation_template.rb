@@ -10,10 +10,9 @@ module Ccd::ProblemObservationTemplate
       constraint 'mood_code', {:cardinality=>"1..1", :value=>"EVN"}
       
       # SHALL contain exactly one [1..1] templateId (CONF:14926) such that it
-      constraint 'template_id', {:cardinality=>"1..1"}
-      
       # SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.4" (CONF:14927).
-      constraint 'template_id.root', {:cardinality=>"1..1", :value=>"2.16.840.1.113883.10.20.22.4.4"}
+      constraint 'template_id', {:cardinality=>"1..1", :value=>{:root => "2.16.840.1.113883.10.20.22.4.4"}}
+      constraint 'template_id', {:cardinality=>"1..1", :value=>{:root => "2.16.840.1.113883.10.20.22.4.4", :extension => "2015-08-01"}}
       
       # SHALL contain at least one [1..*] id (CONF:9043).
       constraint 'id', {:cardinality=>"1..*"}

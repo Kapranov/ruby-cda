@@ -7,7 +7,8 @@ module Ccd::ProblemSectionEntriesRequiredTemplate
       constraint 'template_id', {:cardinality=>"1..1"}
       
       # SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.2.5.1" (CONF:10441).
-      constraint 'template_id.root', {:cardinality=>"1..1", :value=>"2.16.840.1.113883.10.20.22.2.5.1"}
+      constraint 'template_id', {:cardinality=>"1..1", :value=>{:root =>"2.16.840.1.113883.10.20.22.2.5.1"}}
+      constraint 'template_id', {:cardinality=>"1..1", :value=>{:root =>"2.16.840.1.113883.10.20.22.2.5.1", :extension =>"2015-08-01"}}
       
       # SHALL contain exactly one [1..1] code (CONF:15409).
       constraint 'code', {:cardinality=>"1..1", :value=>{:code=>"11450-4", :display_name=>"Problem List", :code_system=>"2.16.840.1.113883.6.1"}}

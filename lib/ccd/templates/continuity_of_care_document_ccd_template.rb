@@ -3,6 +3,10 @@ module Ccd::ContinuityOfCareDocumentCCDTemplate
     base.class_eval do
       extend ::Ccd::Dsl
       
+      # US Realm Template
+      constraint 'template_id', {:cardinality=>"1..1", :value=>{:root => "2.16.840.1.113883.10.20.22.1.1"}}
+      constraint 'template_id', {:cardinality=>"1..1", :value=>{:root => "2.16.840.1.113883.10.20.22.1.1", :extension => "2015-08-01"}}
+
       # SHALL contain exactly one [1..1] templateId (CONF:8450) such that it
       # SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.1.2" (CONF:10038).
       constraint 'template_id', {:cardinality=>"1..1", :value=>{:root => "2.16.840.1.113883.10.20.22.1.2"}}

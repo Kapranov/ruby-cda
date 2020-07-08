@@ -1,3 +1,7 @@
+- 0.2.3
+
+  - Fix typo that made 0.2.2 not actually work
+
 - 0.2.2
 
   - Add `extension="2015-08-01"` to a bunch of template ids to pass specific Edge Testing Tool criteria

@@ -5,8 +5,8 @@ module Ccd::AllergiesSectionEntriesRequiredTemplate
       
       # SHALL contain exactly one [1..1] templateId (CONF:7527) such that it
       # SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.2.6.1" (CONF:10379).
-      constraint 'template_id', {:cardinality=>"1..1", :root=>{:value=>"2.16.840.1.113883.10.20.22.2.6.1"}}
-      constraint 'template_id', {:cardinality=>"1..1", :root=>{:value=>"2.16.840.1.113883.10.20.22.2.6.1", :extension=>"2015-08-01"}}
+      constraint 'template_id', {:cardinality=>"1..1", :value=>{:root=>"2.16.840.1.113883.10.20.22.2.6.1"}}
+      constraint 'template_id', {:cardinality=>"1..1", :value=>{:root=>"2.16.840.1.113883.10.20.22.2.6.1", :extension=>"2015-08-01"}}
       
       # SHALL contain exactly one [1..1] code (CONF:15349).
       constraint 'code', {:cardinality=>"1..1", :value=>{:code=>"48765-2", :display_name=>"Allergies, adverse reactions, alerts", :code_system=>"2.16.840.1.113883.6.1"}}

@@ -1,0 +1,4 @@
+- 0.2.2
+
+  - Add `extension="2015-08-01"` to a bunch of template ids to pass specific Edge Testing Tool criteria
+  - Add the US Realm header to Continuity of Care document to pass specific Edge Testing Tool criteria

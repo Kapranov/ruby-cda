@@ -1,3 +1,7 @@
+- 0.2.4
+
+  - Add some more extensions that the validator tells us are required
+
 - 0.2.3
 
   - Fix typo that made 0.2.2 not actually work

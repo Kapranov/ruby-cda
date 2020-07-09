@@ -4,11 +4,10 @@ module Ccd::MedicationsSectionEntriesRequiredTemplate
       extend ::Ccd::Dsl
       
       # SHALL contain exactly one [1..1] templateId (CONF:7568) such that it
-      constraint 'template_id', {:cardinality=>"1..1"}
-      
       # SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.2.1.1" (CONF:10433).
-      constraint 'template_id.root', {:cardinality=>"1..1", :value=>"2.16.840.1.113883.10.20.22.2.1.1"}
-      
+      constraint 'template_id', {:cardinality=>"1..1", :value=>{:root=>"2.16.840.1.113883.10.20.22.2.1.1"}}
+      constraint 'template_id', {:cardinality=>"1..1", :value=>{:root=>"2.16.840.1.113883.10.20.22.2.1.1", :extension=>"2014-06-09"}}
+
       # SHALL contain exactly one [1..1] code (CONF:15387).
       constraint 'code', {:cardinality=>"1..1", :value=>{:code=>"10160-0", :display_name=>"History of medication use", :code_system=>"2.16.840.1.113883.6.1"}}
       

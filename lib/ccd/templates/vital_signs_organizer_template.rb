@@ -10,16 +10,16 @@ module Ccd::VitalSignsOrganizerTemplate
       constraint 'mood_code', {:cardinality=>"1..1", :value=>"EVN"}
       
       # SHALL contain exactly one [1..1] templateId (CONF:7281) such that it
-      constraint 'template_id', {:cardinality=>"1..1"}
-      
       # SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.26" (CONF:10528).
-      constraint 'template_id.root', {:cardinality=>"1..1", :value=>"2.16.840.1.113883.10.20.22.4.26"}
+      constraint 'template_id', {:cardinality=>"1..1", :value=>{:root=>"2.16.840.1.113883.10.20.22.4.26"}}
+      constraint 'template_id', {:cardinality=>"1..1", :value=>{:root=>"2.16.840.1.113883.10.20.22.4.26", :extension=>"2015-08-01"}}
       
       # SHALL contain at least one [1..*] id (CONF:7282).
       constraint 'id', {:cardinality=>"1..*"}
       
       # SHALL contain exactly one [1..1] code (CONF:19176).
       constraint 'code', {:cardinality=>"1..1", :value=>{:code=>"46680005", :display_name=>"Vital signs", :code_system=>"2.16.840.1.113883.6.96"}}
+      constraint 'code.translation', {:cardinality=>"1..1", :value=>{:code=>"74728-7", :display_name=>"Vital signs, weight, height, head circumference, oximetry, BMI, and BSA panel - HL7.CCDAr1.1", :code_system=>"2.16.840.1.113883.6.1"}}
       
       # SHALL contain exactly one [1..1] statusCode (CONF:7284).
       constraint 'status_code', {:cardinality=>"1..1", :value=>{:code=>"completed", :display_name=>"Completed", :code_system=>"2.16.840.1.113883.5.14"}}

@@ -1,3 +1,7 @@
+- 0.2.5
+
+  - Still more more extensions that the validator tells us are required
+
 - 0.2.4
 
   - Add some more extensions that the validator tells us are required

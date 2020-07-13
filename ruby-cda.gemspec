@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |s|
   s.name        = 'ruby-cda'
-  s.version     = '0.2.5'
+  s.version     = '0.2.6'
   s.licenses    = ['MIT']
   s.summary     = "HL7 CDA Documents"
   s.description = "Parse & generation of HL7 cda documents"

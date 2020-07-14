@@ -10,10 +10,9 @@ module Ccd::AllergyProblemActTemplate
       constraint 'mood_code', {:cardinality=>"1..1", :value=>"EVN"}
       
       # SHALL contain exactly one [1..1] templateId (CONF:7471) such that it
-      constraint 'template_id', {:cardinality=>"1..1"}
-      
       # SHALL contain exactly one [1..1] @root="2.16.840.1.113883.10.20.22.4.30" (CONF:10489).
-      constraint 'template_id.root', {:cardinality=>"1..1", :value=>"2.16.840.1.113883.10.20.22.4.30"}
+      constraint 'template_id', {:cardinality=>"1..1", :value=>{:root=>"2.16.840.1.113883.10.20.22.4.30"}}
+      constraint 'template_id', {:cardinality=>"1..1", :value=>{:root=>"2.16.840.1.113883.10.20.22.4.30", :extension=>"2015-08-01"}}
       
       # SHALL contain at least one [1..*] id (CONF:7472).
       constraint 'id', {:cardinality=>"1..*"}

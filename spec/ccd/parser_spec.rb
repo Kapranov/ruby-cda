@@ -16,6 +16,13 @@ describe Cda::XmlParser do
     described_class.new(xml_node, Ccd::Registry.instance)
   end
 
+  around do |example|
+    orig_config = Ccd.config
+    Ccd.configure(forgive_multiple_nodes_by_using_first: true)
+    example.run
+    Ccd.configure(orig_config)
+  end
+
   it 'should parse document' do
     ccd = subject.parse
     patient = ccd.record_target.first.patient_role
